@@ -59,28 +59,30 @@ header {
 /* Botones de compra */
 .btn-comprar, .btn-agotado {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 15px 30px;
     border-radius: 30px;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 80%;
+    width: 90%;
     margin-top: 10px;
 }
 
 .btn-comprar {
-    background-color: #ff4081;
+    background-color: #ffb6c1; /* Color rosa pastel */
 }
 
 .btn-comprar:hover {
-    background-color: #d32f6f;
+    background-color: #ff8aa0;
     transform: translateY(-3px);
 }
 
 .btn-agotado {
-    background-color: #ccc;
+    background-color: #f0f0f0; /* Color blanco suave */
+    color: #999;
     cursor: not-allowed;
 }
 
