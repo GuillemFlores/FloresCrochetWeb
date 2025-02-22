@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,17 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flores a Crochet</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Inventario de productos
+        const inventario = {
+            "Flor Roja a Crochet": 3,
+            "Peluche tejido de Messi": 0,
+            "Spiderman a Crochet": 5
+        };
+
+        // Función para comprar
+        function comprarPorWhatsApp(producto) {
+            if (inventario[producto] > 0) {
+                const telefono = "528994195646";  // Reemplaza con tu número de WhatsApp
+                const mensaje = `Hola, quiero comprar el producto: ${producto}. ¿Está disponible?`;
+                const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                window.open(url, "_blank");
+                inventario[producto]--;
+                actualizarInventario();
+            } else {
+                alert("Lo siento, este producto está agotado.");
+            }
+        }
+
+        // Actualizar la visualización del inventario
+        function actualizarInventario() {
+            document.querySelectorAll(".producto").forEach(producto => {
+                const nombre = producto.getAttribute("data-nombre");
+                const stock = inventario[nombre] || 0;
+                const btn = producto.querySelector("button");
+                const stockText = producto.querySelector(".stock");
+                
+                stockText.textContent = `Disponibles: ${stock} pz`;
+                if (stock > 0) {
+                    btn.disabled = false;
+                    btn.textContent = "Comprar";
+                } else {
+                    btn.disabled = true;
+                    btn.textContent = "Agotado";
+                }
+            });
+        }
+
+        // Inicializar al cargar la página
+        window.onload = actualizarInventario;
+    </script>
 </head>
-<script>
-    function comprarPorWhatsApp(producto) {
-        var telefono = "528994195646";  // Reemplaza con el número de WhatsApp de tu hermana.
-        var mensaje = `Hola, quiero comprar el producto: ${producto}. ¿Está disponible?`;
-        var url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, "_blank");
-    }
-</script>
-
-
 <body>
     <div class="contenedor">
         <header>
@@ -28,80 +61,25 @@
             <section id="productos">
                 <h2>Nuestros Productos</h2>
 
-                <div class="producto">
+                <div class="producto" data-nombre="Flor Roja a Crochet">
                     <img src="images/flor1.jpg" alt="Flor Roja a Crochet">
                     <p>Flor Roja a Crochet - $5.00</p>
-                    <button class="btn-comprar" onclick="comprarPorWhatsApp('Flor Roja a Crochet')">Comprar</button>
+                    <p class="stock"></p>
+                    <button onclick="comprarPorWhatsApp('Flor Roja a Crochet')">Comprar</button>
                 </div>
 
-                <div class="producto">
+                <div class="producto" data-nombre="Peluche tejido de Messi">
                     <img src="images/Messi.jpg" alt="Peluche tejido de Messi">
                     <p>Peluche tejido de Messi - $500.00 MX</p>
-                    <button class="btn-comprar" onclick="comprarPorWhatsApp('Peluche tejido de Messi')">Comprar</button>
+                    <p class="stock"></p>
+                    <button onclick="comprarPorWhatsApp('Peluche tejido de Messi')">Comprar</button>
                 </div>
-                
-                <div class="producto">
+
+                <div class="producto" data-nombre="Spiderman a Crochet">
                     <img src="images/Spiderman.jpg" alt="Spiderman a Crochet">
                     <p>Spiderman a Crochet - $400.00 MX</p>
-                    <button class="btn-comprar" onclick="comprarPorWhatsApp('Spiderman a Crochet')">Comprar</button>
-                </div>
-                
-
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Flores a Crochet. Todos los derechos reservados.</p>
-        </footer>
-    </div>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores a Crochet</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<script>
-    function comprarPorWhatsApp(producto) {
-        var telefono = "528994195646";  // Reemplaza con el número de WhatsApp de tu hermana.
-        var mensaje = `Hola, quiero comprar el producto: ${producto}. ¿Está disponible?`;
-        var url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, "_blank");
-    }
-</script>
-
-
-<body>
-    <div class="contenedor">
-        <header>
-            <h1>Flores a Crochet</h1>
-            <p>Las flores más hermosas hechas a mano con amor.</p>
-        </header>
-
-        <main>
-            <section id="productos">
-                <h2>Nuestros Productos</h2>
-
-                <div class="producto">
-                    <img src="images/flor1.jpg" alt="Flor Roja a Crochet">
-                    <p>Flor Roja a Crochet - $5.00</p>
-                    <button class="btn-comprar" onclick="comprarPorWhatsApp('Flor Roja a Crochet')">Comprar</button>
-                </div>
-
-                <div class="producto">
-                    <img src="images/Messi.jpg" alt="Peluche tejido de Messi">
-                    <p>Peluche tejido de Messi - $500.00 MX</p>
-                    <button class="btn-comprar" onclick="comprarProducto('Peluche tejido de Messi')">Comprar</button>
-                </div>
-
-                <div class="producto">
-                    <img src="images/Spiderman.jpg" alt="Spiderman a Crochet">
-                    <p>Spiderman a Crochet - $400.00 MX</p>
-                    <button class="btn-comprar" onclick="comprarProducto('Spiderman a Crochet')">Comprar</button>
+                    <p class="stock"></p>
+                    <button onclick="comprarPorWhatsApp('Spiderman a Crochet')">Comprar</button>
                 </div>
 
             </section>
@@ -113,4 +91,3 @@
     </div>
 </body>
 </html>
->>>>>>> aee24493d178e7ed37b1a6fbb467e7ff96e82df7
