@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,3 +56,61 @@
     </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores a Crochet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function comprarPorWhatsApp(producto) {
+        var telefono = "528994195646";  // Reemplaza con el número de WhatsApp de tu hermana.
+        var mensaje = `Hola, quiero comprar el producto: ${producto}. ¿Está disponible?`;
+        var url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, "_blank");
+    }
+</script>
+
+
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>Flores a Crochet</h1>
+            <p>Las flores más hermosas hechas a mano con amor.</p>
+        </header>
+
+        <main>
+            <section id="productos">
+                <h2>Nuestros Productos</h2>
+
+                <div class="producto">
+                    <img src="images/flor1.jpg" alt="Flor Roja a Crochet">
+                    <p>Flor Roja a Crochet - $5.00</p>
+                    <button class="btn-comprar" onclick="comprarPorWhatsApp('Flor Roja a Crochet')">Comprar</button>
+                </div>
+
+                <div class="producto">
+                    <img src="images/Messi.jpg" alt="Peluche tejido de Messi">
+                    <p>Peluche tejido de Messi - $500.00 MX</p>
+                    <button class="btn-comprar" onclick="comprarProducto('Peluche tejido de Messi')">Comprar</button>
+                </div>
+
+                <div class="producto">
+                    <img src="images/Spiderman.jpg" alt="Spiderman a Crochet">
+                    <p>Spiderman a Crochet - $400.00 MX</p>
+                    <button class="btn-comprar" onclick="comprarProducto('Spiderman a Crochet')">Comprar</button>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Flores a Crochet. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
+>>>>>>> aee24493d178e7ed37b1a6fbb467e7ff96e82df7
